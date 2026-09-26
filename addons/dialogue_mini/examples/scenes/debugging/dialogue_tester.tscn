@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://chw2bfmh8qe6m"]
+
+[ext_resource type="Script" uid="uid://de21x7cjgq8uc" path="res://addons/dialogue_mini/scripts/debugging/debug_dialogue_item_list.gd" id="2_fgtjf"]
+
+[node name="DialogueSystem" type="Node2D" unique_id=1976414962]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1729641122]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1409169822]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DialogueList" type="ItemList" parent="CanvasLayer/Control" unique_id=1754737156]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -121.75198
+offset_right = 343.0
+offset_bottom = 121.75198
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("2_fgtjf")

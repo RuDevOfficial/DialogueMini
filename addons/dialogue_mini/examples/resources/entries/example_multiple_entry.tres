@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueLibraryEntry" format=3 uid="uid://bttcjcnqbt7g1"]
+
+[ext_resource type="Script" uid="uid://cow31i1xc8pbg" path="res://addons/dialogue_mini/scripts/dialogue/dialogue_entry/dialogue_library_entry.gd" id="1_sgprq"]
+[ext_resource type="Script" uid="uid://cj1gc4gu106jp" path="res://addons/dialogue_mini/scripts/dialogue/dialogue_entry/dialogue_step.gd" id="2_eq0lm"]
+
+[sub_resource type="Resource" id="Resource_5p7fn"]
+script = ExtResource("2_eq0lm")
+text = "Tdawadawdwadawda"
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[resource]
+script = ExtResource("1_sgprq")
+steps = Array[ExtResource("2_eq0lm")]([SubResource("Resource_5p7fn")])
+metadata/_custom_type_script = "uid://cow31i1xc8pbg"

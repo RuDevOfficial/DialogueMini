@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DialogueLibraryEntry" format=3 uid="uid://cvtbaafa14lnb"]
+
+[ext_resource type="Script" uid="uid://cow31i1xc8pbg" path="res://addons/dialogue_mini/scripts/dialogue/dialogue_entry/dialogue_library_entry.gd" id="1_jy027"]
+[ext_resource type="Script" uid="uid://cj1gc4gu106jp" path="res://addons/dialogue_mini/scripts/dialogue/dialogue_entry/dialogue_step.gd" id="2_6e0r1"]
+[ext_resource type="Script" uid="uid://bvtmk23n25l2w" path="res://addons/dialogue_mini/scripts/dialogue/dialogue_entry/effects/examples/dialogue_modify_char_speed.gd" id="3_c0j7m"]
+
+[sub_resource type="Resource" id="Resource_m4jal"]
+script = ExtResource("3_c0j7m")
+speed_multiplier = 4.0
+metadata/_custom_type_script = "uid://bvtmk23n25l2w"
+
+[sub_resource type="Resource" id="Resource_6e0r1"]
+script = ExtResource("2_6e0r1")
+text = "This is an example of a single dialogue paragraph. When you press the continue key, it will end."
+effect = SubResource("Resource_m4jal")
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[resource]
+script = ExtResource("1_jy027")
+steps = Array[ExtResource("2_6e0r1")]([SubResource("Resource_6e0r1")])
+metadata/_custom_type_script = "uid://cow31i1xc8pbg"
