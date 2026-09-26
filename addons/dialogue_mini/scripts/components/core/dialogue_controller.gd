@@ -53,10 +53,11 @@ func _input(event: InputEvent) -> void:
 		if finished_step == false:
 			if can_instantly_show_text == false: return
 			
-			set_process(false)
 			current_time = 0.0
 			finished_step = true
 			dialogue_text.visible_ratio = 1.0
+			step_ended.emit(current_dialogue_entry.reference_name, current_dialogue_step)
+			set_process(false)
 		else:
 			finished_step = false
 			_continue_dialogue()
@@ -166,7 +167,7 @@ func _try_emit_step_start() -> void:
 
 func _play_contextual_animation() -> void:
 	# Changing anim if the next one is going to go out of bounds
-	if current_dialogue_step + 1 >= current_dialogue_entry.text_entries.size():
+	if current_dialogue_step + 1 >= current_dialogue_entry.steps.size():
 		animation_player.play("continue_end")
 	else:
 		animation_player.play("continue_next")

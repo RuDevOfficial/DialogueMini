@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bs2barrqe60u3"]
 
-[ext_resource type="Script" uid="uid://qbu2w75pj65n" path="res://addons/dialogue_mini/scripts/components/dialogue_controller.gd" id="1_wot31"]
+[ext_resource type="Script" uid="uid://qbu2w75pj65n" path="res://addons/dialogue_mini/scripts/components/core/dialogue_controller.gd" id="1_wot31"]
 [ext_resource type="Texture2D" uid="uid://cgo2645ter7sc" path="res://addons/dialogue_mini/assets/ui_dialogue_next.png" id="2_pbh3l"]
 
 [sub_resource type="Animation" id="Animation_o5o1j"]

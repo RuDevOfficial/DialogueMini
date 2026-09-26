@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="DialogueLibrary" format=3 uid="uid://dy2g6kyhqkvmr"]
+
+[ext_resource type="Script" uid="uid://cow31i1xc8pbg" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_library_entry.gd" id="1_l33l5"]
+[ext_resource type="Resource" uid="uid://b5j4axfbosdlm" path="res://addons/dialogue_mini/examples/resources/entries/example_cant_skip_entry.tres" id="2_i0ucj"]
+[ext_resource type="Resource" uid="uid://bttcjcnqbt7g1" path="res://addons/dialogue_mini/examples/resources/entries/example_multiple_entry.tres" id="3_e3u0j"]
+[ext_resource type="Resource" uid="uid://dd686rv37s3s1" path="res://addons/dialogue_mini/examples/resources/entries/example_character_speeds_entry.tres" id="3_i0ucj"]
+[ext_resource type="Resource" uid="uid://kp8pkco1dlax" path="res://addons/dialogue_mini/examples/resources/entries/example_multiple_effects.tres" id="4_e3u0j"]
+[ext_resource type="Resource" uid="uid://cvtbaafa14lnb" path="res://addons/dialogue_mini/examples/resources/entries/example_single_entry.tres" id="4_y2iln"]
+[ext_resource type="Script" uid="uid://cd2rk55l01awp" path="res://addons/dialogue_mini/scripts/components/core/dialogue_library.gd" id="5_l33l5"]
+[ext_resource type="Resource" uid="uid://bnyw31yng4mtr" path="res://addons/dialogue_mini/examples/resources/entries/example_reciever_advanced.tres" id="6_vkcmt"]
+[ext_resource type="Resource" uid="uid://mq80ngbqy82x" path="res://addons/dialogue_mini/examples/resources/entries/example_reciever_simple.tres" id="7_glj4j"]
+
+[resource]
+script = ExtResource("5_l33l5")
+library_entries_path = "res://addons/dialogue_mini/examples/resources/entries/"
+contents = Dictionary[StringName, ExtResource("1_l33l5")]({
+&"example_cant_skip_entry": ExtResource("2_i0ucj"),
+&"example_character_speeds_entry": ExtResource("3_i0ucj"),
+&"example_multiple_effects": ExtResource("4_e3u0j"),
+&"example_multiple_entry": ExtResource("3_e3u0j"),
+&"example_reciever_advanced": ExtResource("6_vkcmt"),
+&"example_reciever_simple": ExtResource("7_glj4j"),
+&"example_single_entry": ExtResource("4_y2iln")
+})
+metadata/_custom_type_script = "uid://cd2rk55l01awp"

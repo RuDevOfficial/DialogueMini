@@ -5,9 +5,9 @@ extends CanvasLayer
 ## Used to request a dialogue. Force dialogue means it will bruteforce a new dialogue window, closing the previous.
 signal request_begin_dialogue(entry : StringName, force_dialogue : bool, callable : Callable)	
 
-signal dialogue_closed(dialogue_entry : StringName) 						## Triggered when the dialogue is closed.
-signal dialogue_step_ends(dialogue_entry : StringName, step_index : int) 	## Triggered when a dialogue step ends.
 signal dialogue_step_starts(dialogue_entry : StringName, step_index : int) 	## Triggered when a dialogue step starts.
+signal dialogue_step_ends(dialogue_entry : StringName, step_index : int) 	## Triggered when a dialogue step ends.
+signal dialogue_closed(dialogue_entry : StringName) 						## Triggered when the dialogue is closed.
 
 ## Sets the default layer on which this manager will sit in, modify if needed.
 const DEFAULT_LAYER : int = 8 ## Default layer the dialogue system will be in

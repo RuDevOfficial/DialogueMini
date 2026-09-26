@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="DialogueLibraryEntry" format=3 uid="uid://mq80ngbqy82x"]
+
+[ext_resource type="Script" uid="uid://cow31i1xc8pbg" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_library_entry.gd" id="1_lke3s"]
+[ext_resource type="Script" uid="uid://cj1gc4gu106jp" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_step.gd" id="2_kiema"]
+
+[sub_resource type="Resource" id="Resource_gks4d"]
+script = ExtResource("2_kiema")
+text = "As you can see this dialogue is tied to a reciever via the \"Reference Name\" on the Entry."
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[sub_resource type="Resource" id="Resource_vyxrl"]
+script = ExtResource("2_kiema")
+text = "And in this case it's a simple reciever, so the same animation happens..."
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[sub_resource type="Resource" id="Resource_7jtxy"]
+script = ExtResource("2_kiema")
+text = "When I start and end."
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[resource]
+script = ExtResource("1_lke3s")
+reference_name = &"reciever_simple"
+steps = Array[ExtResource("2_kiema")]([SubResource("Resource_gks4d"), SubResource("Resource_vyxrl"), SubResource("Resource_7jtxy")])
+metadata/_custom_type_script = "uid://cow31i1xc8pbg"

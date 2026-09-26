@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DialogueLibraryEntry" format=3 uid="uid://kp8pkco1dlax"]
+
+[ext_resource type="Script" uid="uid://cow31i1xc8pbg" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_library_entry.gd" id="1_m55r1"]
+[ext_resource type="Script" uid="uid://cj1gc4gu106jp" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_step.gd" id="2_q2myt"]
+[ext_resource type="Script" uid="uid://cimwopgv2477x" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/effects/dialogue_entry_effect.gd" id="3_72gm8"]
+[ext_resource type="Script" uid="uid://bvtmk23n25l2w" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/effects/examples/dialogue_modify_char_speed.gd" id="4_8rsk1"]
+[ext_resource type="Script" uid="uid://bakdpf6dmnr2n" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/effects/examples/dialogue_cant_skip_step.gd" id="5_rdny3"]
+[ext_resource type="Script" uid="uid://3n3rffi3g70n" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/effects/examples/dialogue_effects_multiple.gd" id="6_1c13o"]
+
+[sub_resource type="Resource" id="Resource_wwm8l"]
+script = ExtResource("4_8rsk1")
+speed_multiplier = 0.5
+metadata/_custom_type_script = "uid://bvtmk23n25l2w"
+
+[sub_resource type="Resource" id="Resource_t17dy"]
+script = ExtResource("5_rdny3")
+metadata/_custom_type_script = "uid://bakdpf6dmnr2n"
+
+[sub_resource type="Resource" id="Resource_dv30p"]
+script = ExtResource("6_1c13o")
+effects = Array[ExtResource("3_72gm8")]([SubResource("Resource_wwm8l"), SubResource("Resource_t17dy")])
+metadata/_custom_type_script = "uid://3n3rffi3g70n"
+
+[sub_resource type="Resource" id="Resource_q4n36"]
+script = ExtResource("2_q2myt")
+text = "You can even combine multiple effects!"
+effect = SubResource("Resource_dv30p")
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[resource]
+script = ExtResource("1_m55r1")
+steps = Array[ExtResource("2_q2myt")]([SubResource("Resource_q4n36")])
+metadata/_custom_type_script = "uid://cow31i1xc8pbg"

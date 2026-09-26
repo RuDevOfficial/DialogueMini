@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogueLibraryEntry" format=3 uid="uid://dd686rv37s3s1"]
+
+[ext_resource type="Script" uid="uid://cow31i1xc8pbg" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_library_entry.gd" id="1_3xdso"]
+[ext_resource type="Script" uid="uid://cj1gc4gu106jp" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_step.gd" id="2_x84w0"]
+[ext_resource type="Script" uid="uid://bvtmk23n25l2w" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/effects/examples/dialogue_modify_char_speed.gd" id="3_x84w0"]
+
+[sub_resource type="Resource" id="Resource_01p5e"]
+script = ExtResource("3_x84w0")
+speed_multiplier = 0.3
+metadata/_custom_type_script = "uid://bvtmk23n25l2w"
+
+[sub_resource type="Resource" id="Resource_e4axv"]
+script = ExtResource("2_x84w0")
+text = "This one can be slow."
+effect = SubResource("Resource_01p5e")
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[sub_resource type="Resource" id="Resource_l6ng5"]
+script = ExtResource("3_x84w0")
+speed_multiplier = 4.0
+metadata/_custom_type_script = "uid://bvtmk23n25l2w"
+
+[sub_resource type="Resource" id="Resource_iaxgh"]
+script = ExtResource("2_x84w0")
+text = "This one can be super fast!"
+effect = SubResource("Resource_l6ng5")
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[sub_resource type="Resource" id="Resource_x84w0"]
+script = ExtResource("2_x84w0")
+text = "See?"
+metadata/_custom_type_script = "uid://cj1gc4gu106jp"
+
+[resource]
+script = ExtResource("1_3xdso")
+steps = Array[ExtResource("2_x84w0")]([SubResource("Resource_e4axv"), SubResource("Resource_iaxgh"), SubResource("Resource_x84w0")])
+metadata/_custom_type_script = "uid://cow31i1xc8pbg"
