@@ -35,5 +35,6 @@ In order to set up your own interface in order to use this addon you need to:
 6. Call **DialogueManager**.request_begin_dialogue(entry : **StringName**, force_dialogue : **bool**, callable : **Callable**)
 
 ## Featured Games using DialogueMini
-![GoldVestigation](https://img.itch.zone/aW1hZ2UvNTAwMDUwNS8zMDEyMjQxMi5naWY=/original/9Rd6Fy.gif)
 [Goldvestigation](https://ru-dev-official.itch.io/goldvestigation)
+![GoldVestigation](https://img.itch.zone/aW1hZ2UvNTAwMDUwNS8zMDEyMjQxMi5naWY=/original/9Rd6Fy.gif)
+
