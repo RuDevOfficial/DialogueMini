@@ -36,5 +36,6 @@ In order to set up your own interface in order to use this addon you need to:
 
 ## Featured Games using DialogueMini
 [Goldvestigation](https://ru-dev-official.itch.io/goldvestigation)
+
 ![GoldVestigation](https://img.itch.zone/aW1hZ2UvNTAwMDUwNS8zMDEyMjQxMi5naWY=/original/9Rd6Fy.gif)
 
