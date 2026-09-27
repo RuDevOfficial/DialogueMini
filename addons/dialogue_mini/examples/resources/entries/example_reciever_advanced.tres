@@ -3,23 +3,18 @@
 [ext_resource type="Script" uid="uid://cow31i1xc8pbg" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_library_entry.gd" id="1_2losg"]
 [ext_resource type="Script" uid="uid://cj1gc4gu106jp" path="res://addons/dialogue_mini/scripts/resources/dialogue/dialogue_entry/dialogue_step.gd" id="2_4r840"]
 
-[sub_resource type="Resource" id="Resource_gks4d"]
+[sub_resource type="Resource" id="Resource_2losg"]
 script = ExtResource("2_4r840")
 text = "As you can see this dialogue is tied to a reciever via the \"Reference Name\" on the Entry."
 metadata/_custom_type_script = "uid://cj1gc4gu106jp"
 
-[sub_resource type="Resource" id="Resource_vyxrl"]
+[sub_resource type="Resource" id="Resource_4r840"]
 script = ExtResource("2_4r840")
-text = "And in this case it's a simple reciever, so the same animation happens..."
-metadata/_custom_type_script = "uid://cj1gc4gu106jp"
-
-[sub_resource type="Resource" id="Resource_7jtxy"]
-script = ExtResource("2_4r840")
-text = "When I start and end."
+text = "And in this case it's an advanced reciever, so there's a different animation on each key."
 metadata/_custom_type_script = "uid://cj1gc4gu106jp"
 
 [resource]
 script = ExtResource("1_2losg")
 reference_name = &"reciever_advanced"
-steps = Array[ExtResource("2_4r840")]([SubResource("Resource_gks4d"), SubResource("Resource_vyxrl"), SubResource("Resource_7jtxy")])
+steps = Array[ExtResource("2_4r840")]([SubResource("Resource_2losg"), SubResource("Resource_4r840")])
 metadata/_custom_type_script = "uid://cow31i1xc8pbg"

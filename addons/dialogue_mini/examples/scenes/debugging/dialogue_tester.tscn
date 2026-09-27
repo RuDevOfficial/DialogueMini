@@ -1,6 +1,124 @@
 [gd_scene format=3 uid="uid://chw2bfmh8qe6m"]
 
+[ext_resource type="Script" uid="uid://dpyg4fe6hdhut" path="res://addons/dialogue_mini/scripts/components/recievers/animation_player_dialogue_reciever.gd" id="2_60h0r"]
 [ext_resource type="Script" uid="uid://de21x7cjgq8uc" path="res://addons/dialogue_mini/scripts/debugging/debug_dialogue_item_list.gd" id="2_fgtjf"]
+[ext_resource type="Script" uid="uid://xnrn1j8tf8og" path="res://addons/dialogue_mini/scripts/resources/other/animation_key_resource.gd" id="3_tmn47"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4b667"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_60h0r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5lxv7"]
+resource_name = "move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tmn47"]
+resource_name = "rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_u2cbl"]
+resource_name = "scale"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5lxv7"]
+_data = {
+&"RESET": SubResource("Animation_60h0r"),
+&"move": SubResource("Animation_5lxv7"),
+&"rotate": SubResource("Animation_tmn47"),
+&"scale": SubResource("Animation_u2cbl")
+}
+
+[sub_resource type="Resource" id="Resource_60h0r"]
+script = ExtResource("3_tmn47")
+steps = PackedInt32Array(0)
+key = &"rotate"
+metadata/_custom_type_script = "uid://xnrn1j8tf8og"
+
+[sub_resource type="Resource" id="Resource_tmn47"]
+script = ExtResource("3_tmn47")
+steps = PackedInt32Array(1)
+key = &"move"
+metadata/_custom_type_script = "uid://xnrn1j8tf8og"
+
+[sub_resource type="Resource" id="Resource_2losg"]
+script = ExtResource("3_tmn47")
+steps = PackedInt32Array(0)
+key = &"scale"
+metadata/_custom_type_script = "uid://xnrn1j8tf8og"
 
 [node name="DialogueSystem" type="Node2D" unique_id=1976414962]
 
@@ -30,3 +148,35 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("2_fgtjf")
+
+[node name="ExampleSimple" type="Node2D" parent="." unique_id=556634528]
+position = Vector2(402, 462)
+
+[node name="Sprite2D" type="Sprite2D" parent="ExampleSimple" unique_id=672986986]
+texture = SubResource("PlaceholderTexture2D_4b667")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ExampleSimple" unique_id=472932335]
+libraries/ = SubResource("AnimationLibrary_5lxv7")
+
+[node name="DialogueReceiver" type="Node" parent="ExampleSimple/AnimationPlayer" unique_id=134743295]
+script = ExtResource("2_60h0r")
+start_step_animation_key = &"rotate"
+compared_key = &"reciever_simple"
+metadata/_custom_type_script = "uid://dpyg4fe6hdhut"
+
+[node name="ExampleAdvanced" type="Node2D" parent="." unique_id=1324556122]
+position = Vector2(744, 462)
+
+[node name="Sprite2D" type="Sprite2D" parent="ExampleAdvanced" unique_id=1720860199]
+texture = SubResource("PlaceholderTexture2D_4b667")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ExampleAdvanced" unique_id=1417391709]
+libraries/ = SubResource("AnimationLibrary_5lxv7")
+
+[node name="DialogueReceiver" type="Node" parent="ExampleAdvanced/AnimationPlayer" unique_id=372442602]
+script = ExtResource("2_60h0r")
+is_simple = false
+start_step_animation_key_array = Array[ExtResource("3_tmn47")]([SubResource("Resource_60h0r"), SubResource("Resource_tmn47")])
+end_step_animation_keys_array = Array[ExtResource("3_tmn47")]([SubResource("Resource_2losg")])
+compared_key = &"reciever_advanced"
+metadata/_custom_type_script = "uid://dpyg4fe6hdhut"
