@@ -22,8 +22,14 @@ var animation_player : AnimationPlayer
 
 # Advanced Parameters
 @export_group("Advanced")
-@export var start_step_animation_key_array : Array[AnimationKeyResource] = []		## Animations played per each step started and in which steps. [br]Each KeyResource contains a list of step indexes and the animation key.
-@export var end_step_animation_keys_array : Array[AnimationKeyResource] = []		## Animations played per each step ended and in which steps. [br]Each KeyResource contains a list of step indexes and the animation key.
+## Animations played per each step started and in which steps. [br]Each KeyResource contains a list of step indexes and the animation key.
+@export var start_step_animation_key_array : Array[AnimationKeyResource] = []
+## Animations played per each step ended and in which steps. [br]Each KeyResource contains a list of step indexes and the animation key.
+@export var end_step_animation_key_array : Array[AnimationKeyResource] = []
+## Animation key played when no other animation is called for each started step (plays if no other steps have a specific index)
+@export var default_start_animation_key : StringName
+## Animation key played when no other animation is called for each ended step (plays if no other steps have a specific index)
+@export var default_end_animation_key : StringName
 
 func _ready() -> void:
 	_check_for_queue_free()
@@ -39,14 +45,17 @@ func _ready() -> void:
 func _check_for_queue_free() -> void:
 	if compared_key.is_empty():
 		queue_free()
+		push_warning("Node %s has been removed because the compared key is empty." % [name])
 		return
 	
 	if is_simple == true and start_step_animation_key.is_empty() and end_step_animation_key.is_empty():
 		queue_free()
+		push_warning("Node %s has been removed because there aren't any animation keys for start and end." % [name])
 		return
 	
-	if is_simple == false and start_step_animation_key_array.is_empty() and end_step_animation_keys_array.is_empty():
+	if is_simple == false and start_step_animation_key_array.is_empty() and end_step_animation_key_array.is_empty():
 		queue_free()
+		push_warning("Node %s has been removed because no step animation keys were added on the arrays." % [name])
 		return
 
 ## Plays an animation from AnimationPlayer every time a dialogue step starts.
@@ -63,10 +72,15 @@ func _on_start_step(entry : StringName, step : int) -> void:
 		false:
 			animation_player.stop()
 			
+			# Looking up for the step that contains the step index we are right now.
 			for resource : AnimationKeyResource in start_step_animation_key_array:
 				if resource.steps.has(step):
 					animation_player.play(resource.key)
-					break
+					return
+			
+			# Plays a default animation on each step that is not specified in the AnimationKeyResource array.
+			if default_start_animation_key.is_empty() == false:
+				animation_player.play(default_start_animation_key)
 
 
 ## Plays an animation from AnimationPlayer every time a dialogue step ends.
@@ -83,10 +97,15 @@ func _on_end_step(entry : StringName, step : int) -> void:
 		false:
 			animation_player.stop()
 			
-			for resource : AnimationKeyResource in end_step_animation_keys_array:
+			# Looking up for the step that contains the step index we are right now.
+			for resource : AnimationKeyResource in end_step_animation_key_array:
 				if resource.steps.has(step):
 					animation_player.play(resource.key)
-					break
+					return
+			
+			# Plays a default animation on each step that is not specified in the AnimationKeyResource array.
+			if default_end_animation_key.is_empty() == false:
+				animation_player.play(default_end_animation_key)
 
 ## Plays an animation from AnimationPlayer every time a dialogue step ends.
 func _on_close_dialogue(entry : StringName) -> void:

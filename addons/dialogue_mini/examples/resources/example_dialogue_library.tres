@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cd2rk55l01awp" path="res://addons/dialogue_mini/scripts/components/core/dialogue_library.gd" id="5_l33l5"]
 [ext_resource type="Resource" uid="uid://bnyw31yng4mtr" path="res://addons/dialogue_mini/examples/resources/entries/example_reciever_advanced.tres" id="6_vkcmt"]
 [ext_resource type="Resource" uid="uid://mq80ngbqy82x" path="res://addons/dialogue_mini/examples/resources/entries/example_reciever_simple.tres" id="7_glj4j"]
+[ext_resource type="Resource" uid="uid://hbfx3owcs6ot" path="res://addons/dialogue_mini/examples/resources/entries/example_reciever_advanced_default.tres" id="7_vkcmt"]
 
 [resource]
 script = ExtResource("5_l33l5")
@@ -19,6 +20,7 @@ contents = Dictionary[StringName, ExtResource("1_l33l5")]({
 &"example_multiple_effects": ExtResource("4_e3u0j"),
 &"example_multiple_entry": ExtResource("3_e3u0j"),
 &"example_reciever_advanced": ExtResource("6_vkcmt"),
+&"example_reciever_advanced_default": ExtResource("7_vkcmt"),
 &"example_reciever_simple": ExtResource("7_glj4j"),
 &"example_single_entry": ExtResource("4_y2iln")
 })
