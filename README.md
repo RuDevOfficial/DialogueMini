@@ -6,4 +6,8 @@
 
 >**🛈 Supported Godot Engine:**  **4.7.2**
 
-![final gif](https://github.com/user-attachments/assets/977b0780-c91d-4a38-a7e1-e71af5844acb)
+This addon adds a simple dialogue manager system, dialogue controller, dialogue library and other related resources for you to use!
+
+## Featured Games using DialogueMini
+![GoldVestigation](https://img.itch.zone/aW1hZ2UvNTAwMDUwNS8zMDEyMjQxMi5naWY=/original/9Rd6Fy.gif)
+[Goldvestigation](https://ru-dev-official.itch.io/goldvestigation)
