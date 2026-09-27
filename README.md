@@ -6,7 +6,7 @@
 
 >**🛈 Supported Godot Engine:**  **4.7.2**
 
-This addon adds a simple dialogue manager system, dialogue controller, dialogue library and other related resources for you to use!
+This addon adds a simple scene agnostic dialogue manager system, dialogue controller, dialogue library and other related resources for you to use!
 
 ## Installation
 
