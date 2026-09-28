@@ -13,10 +13,10 @@ signal dialogue_closed(dialogue_entry : StringName) 						## Triggered when the 
 const DEFAULT_LAYER : int = 8 ## Default layer the dialogue system will be in
 ## Dialogue library used to look up dialogue entries, modify if needed. (Recommended)
 const DIALOGUE_LIBRARY : DialogueLibrary = preload("uid://dy2g6kyhqkvmr") ## Substitute the library entry with another
-
 ## Packedscene used for the dialogue window. Overwrite it with your own. Must contain a Control node with the root having "dialogue_controller.gd
-var interface_setup : PackedScene = preload("uid://bs2barrqe60u3") 
-## Instance of the dialogue controller (interface_setup) created on initialization.
+const INTERFACE_PACKED_SCENE : PackedScene = preload("uid://bs2barrqe60u3") 
+
+## Instance of the dialogue controller (INTERFACE_PACKED_SCENE) created on initialization.
 var dialogue_controller : DialogueController = null ## Dialogue Controller created on setup.
 
 var target_callable : Callable ## Method meant to be triggered when the dialogue finishes.
@@ -25,7 +25,7 @@ func _init() -> void:
 	request_begin_dialogue.connect(_begin_dialogue)
 
 func _ready() -> void:
-	dialogue_controller = interface_setup.instantiate()
+	dialogue_controller = INTERFACE_PACKED_SCENE.instantiate()
 	add_child(dialogue_controller)
 	
 	dialogue_controller.dialogue_closed.connect(func(dialogue_entry : StringName): dialogue_closed.emit(dialogue_entry))
